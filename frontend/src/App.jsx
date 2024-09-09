@@ -60,18 +60,21 @@ function App() {
 
   return (
     <>
-    {/* <Navbar/> */}
-    <div>
-      <h1>Enhanced Message DAppoo</h1>
-      <p>Connected Account: {account}</p>
-      <p>Token Balance: {tokenBalance}</p>
+   
+    <div className='bg-zinc-950 w-full min-h-screen text-neutral-300'>
+    <Navbar/>
+     <div className='flex justify-center items-center flex-col gap-3'>
+     <h1 className='text-3xl mt-32'>Enhanced Message DAppoo</h1>
+      <p className='hover:text-neutral-400 hover:underline'>Connected Account: {account}</p>
+      <p className=''>Token Balance: {tokenBalance}</p>
       <input 
+      className='p-3 rounded-full border m-4 bg-zinc-600 px-5 pr-32'
         type="text" 
         value={newMessage} 
         onChange={(e) => setNewMessage(e.target.value)} 
         placeholder="Enter new message"
       />
-      <button onClick={sendMessage}>Send Message</button>
+      <button className=' border-white border-b-2 px-4text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' onClick={sendMessage}>Send Message</button>
       <h2>Messages:</h2>
       <ul>
         {messages.map((msg, index) => (
@@ -80,6 +83,7 @@ function App() {
           </li>
         ))}
       </ul>
+     </div>
     </div>
     </>
   );
